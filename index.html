@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Paim | Auditor de Contratos Inteligentes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/Liquid_Gradient.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  
+  <div class="page-wrapper">
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span>Jorge Paim</span>
+      </div>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+        <i data-lucide="menu"></i>
+      </button>
+      <ul class="toggle-buttons" aria-label="Navegação" id="navMenu">
+        <li class="toggle-buttons__item">
+          <a href="#about" class="toggle-buttons__button" type="button">Sobre</a>
+        </li>
+        <li class="toggle-buttons__item toggle-buttons__item--expertise">
+          <a href="#expertise" class="toggle-buttons__button" type="button">Especialidades</a>
+        </li>
+        <li class="toggle-buttons__item toggle-buttons__item--writeups">
+          <a href="#writeups" class="toggle-buttons__button" type="button">Write-ups</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <header class="hero">
+      <!-- Liquid Gradient Background apenas no hero -->
+      <div id="webGLApp"></div>
+      <div class="gradient-overlay"></div>
+      <div class="hero-content-wrapper">
+        <div class="hero-photo">
+          <img src="foto.jpg" alt="Jorge Paim">
+        </div>
+        <div class="hero-content">
+          <h1><i data-lucide="shield-check"></i> Auditor de Contratos Inteligentes</h1>
+          <p>Análise de segurança e vulnerabilidades em protocolos DeFi</p>
+          <span><i data-lucide="trending-up"></i> Price Manipulation • <i data-lucide="bug"></i> Logical Flaws • <i data-lucide="lock"></i> Access Control</span>
+        </div>
+      </div>
+    </header>
+
+  <section id="about">
+    <div class="container">
+      <h2><i data-lucide="user"></i> Sobre mim</h2>
+      <p>Sou auditor de contratos inteligentes com foco na identificação de vulnerabilidades, falhas de lógica e riscos de segurança em smart contracts Solidity.
+
+        Realizo análises manuais de código, modelagem de ameaças e testes direcionados para identificar vetores de ataque como reentrancy, access control inadequado, denial of service e erros de lógica de negócio.
+        
+        Atualmente, meu foco principal como auditor é o estudo de vulnerabilidades recorrentes em protocolos DeFi, com ênfase em falhas de lógica, controle de acesso e vetores de exploração econômica.
+        
+        Minhas análises são documentadas em write-ups técnicos e proofs of concept publicados no GitHub.</p>
+    </div>
+  </section>
+
+  <section id="expertise">
+    <div class="container">
+      <h2><i data-lucide="star"></i> Especialidades</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <h3>Price Manipulation</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i data-lucide="bug"></i>
+          </div>
+          <h3>Logical Flaws</h3>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i data-lucide="lock"></i>
+          </div>
+          <h3>Access Control</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="writeups">
+    <div class="container">
+      <h2><i data-lucide="file-text"></i> Write-ups & Auditorias</h2>
+      <p>Análises técnicas documentadas no GitHub.</p>
+    </div>
+  </section>
+
+  </div>
+
+  <!-- Footer lateral à direita -->
+  <footer class="footer-sidebar">
+    <div class="footer-sidebar-content">
+      <div class="footer-info">
+        <p class="footer-name">Jorge Paim</p>
+        <p class="footer-copyright">© 2026</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/MrAiKen007" class="footer-link" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="mailto:jorgepam2005@gmail.com" class="footer-link" aria-label="Email">
+          <i data-lucide="mail"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    
+    // Menu mobile toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const menuIcon = mobileMenuToggle.querySelector('i[data-lucide]');
+    
+    if (mobileMenuToggle && navMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('menu-open');
+        const isOpen = navMenu.classList.contains('menu-open');
+        
+        if (isOpen) {
+          menuIcon.setAttribute('data-lucide', 'x');
+        } else {
+          menuIcon.setAttribute('data-lucide', 'menu');
+        }
+        lucide.createIcons();
+      });
+      
+      // Fechar menu ao clicar em um link
+      const navLinks = navMenu.querySelectorAll('.toggle-buttons__button');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('menu-open');
+          menuIcon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        });
+      });
+      
+      // Fechar menu ao clicar fora
+      document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+          navMenu.classList.remove('menu-open');
+          menuIcon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        }
+      });
+    }
+  </script>
+  <script src="js/menu.js"></script>
+  <script src="js/Liquid_Gradient.js"></script>
+  <script>
+    setTimeout(() => {
+      if (typeof app !== 'undefined' && app.gradientBackground) {
+
+        const hero = document.querySelector('.hero');
+        const webGLApp = document.getElementById('webGLApp');
+        if (hero && webGLApp) {
+          hero.appendChild(webGLApp);
+          
+          const updateHeroSize = () => {
+            const heroRect = hero.getBoundingClientRect();
+            app.renderer.setSize(heroRect.width, heroRect.height);
+            app.camera.aspect = heroRect.width / heroRect.height;
+            app.camera.updateProjectionMatrix();
+            if (app.gradientBackground) {
+              app.gradientBackground.onResize(heroRect.width, heroRect.height);
+            }
+          };
+          
+          updateHeroSize();
+          window.addEventListener('resize', updateHeroSize);
+        }
+        
+        const uniforms = app.gradientBackground.uniforms;
+        uniforms.uColor1.value.set(1.0, 1.0, 1.0);
+        uniforms.uColor2.value.set(0.0, 0.0, 0.0);
+        uniforms.uColor3.value.set(1.0, 1.0, 1.0);
+        uniforms.uColor4.value.set(0.0, 0.0, 0.0);
+        uniforms.uColor5.value.set(1.0, 1.0, 1.0);
+        uniforms.uColor6.value.set(0.0, 0.0, 0.0);
+        uniforms.uDarkNavy.value.set(0.0, 0.0, 0.0);
+        app.scene.background = new THREE.Color(0x000000);
+      }
+    }, 100);
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* Menu Toggle Styles */
+.toggle-buttons {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 3rem;
+  background-color: #0d0d0d;
+  border: 1px solid #262626;
+  transition: all 0.3s ease;
+}
+
+.toggle-buttons__item {
+  display: grid;
+  position: relative;
+}
+
+.toggle-buttons__button,
+.toggle-buttons__active {
+  grid-area: 1 / 1;
+}
+
+.toggle-buttons__button {
+  padding: 0.5rem 1.25rem;
+  position: relative;
+  z-index: 1;
+  view-transition-class: toggle-button;
+  background: none;
+  border: none;
+  font: inherit;
+  color: #b3b3b3;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  outline: none;
+  display: block;
+}
+
+.toggle-buttons__button:hover {
+  color: #ffffff;
+}
+
+.toggle-buttons__button:focus-visible {
+  outline-style: solid;
+  outline-color: rgba(255, 255, 255, 0.2);
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+
+.toggle-buttons__active {
+  background-color: #404040;
+  border-radius: 3rem;
+  view-transition-name: active-toggle-button;
+}
+
+.toggle-buttons__item--expertise .toggle-buttons__active {
+  background-color: #4a5568;
+}
+
+.toggle-buttons__item--writeups .toggle-buttons__active {
+  background-color: #2d3748;
+}
+
+::view-transition-group(.toggle-button) {
+  z-index: 2;
+}
+
+::view-transition-group(active-toggle-button) {
+  z-index: 1;
+  animation-timing-function: cubic-bezier(0.8, -0.4, 0.5, 1);
+  animation-duration: 0.25s;
+}
+
+::view-transition-old(active-toggle-button),
+::view-transition-new(active-toggle-button) {
+  height: 100%;
+}
