@@ -1,199 +1,417 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jorge Paim | Auditor de Contratos Inteligentes</title>
+  <title>Jorge Paim — Fullstack & Bitcoin Developer</title>
+  <meta name="description" content="Fullstack developer specializing in Bitcoin Core infrastructure, FastAPI backends, and React applications.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" href="css/Liquid_Gradient.css">
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
   
-  <div class="page-wrapper">
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <span>Jorge Paim</span>
-      </div>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
-        <i data-lucide="menu"></i>
-      </button>
-      <ul class="toggle-buttons" aria-label="Navegação" id="navMenu">
-        <li class="toggle-buttons__item">
-          <a href="#about" class="toggle-buttons__button" type="button">Sobre</a>
-        </li>
-        <li class="toggle-buttons__item toggle-buttons__item--expertise">
-          <a href="#expertise" class="toggle-buttons__button" type="button">Especialidades</a>
-        </li>
-        <li class="toggle-buttons__item toggle-buttons__item--writeups">
-          <a href="#writeups" class="toggle-buttons__button" type="button">Write-ups</a>
-        </li>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Home">
+        <span class="nav-logo__mark">jp</span>
+      </a>
+      <ul class="nav-links" aria-label="Navegação">
+        <li><a href="#expertise" class="nav-links__link">Expertise</a></li>
+        <li><a href="#stack" class="nav-links__link">Stack</a></li>
+        <li><a href="#work" class="nav-links__link">Work</a></li>
+        <li><a href="#contact" class="nav-links__link">Contact</a></li>
       </ul>
+      <button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false" id="mobileToggle">
+        <i data-lucide="menu" class="mobile-toggle__icon"></i>
+      </button>
     </div>
   </nav>
 
-    <header class="hero">
-      <!-- Liquid Gradient Background apenas no hero -->
-      <div id="webGLApp"></div>
-      <div class="gradient-overlay"></div>
-      <div class="hero-content-wrapper">
-        <div class="hero-photo">
-          <img src="foto.jpg" alt="Jorge Paim">
-        </div>
-        <div class="hero-content">
-          <h1><i data-lucide="shield-check"></i> Auditor de Contratos Inteligentes</h1>
-          <p>Análise de segurança e vulnerabilidades em protocolos DeFi</p>
-          <span><i data-lucide="trending-up"></i> Price Manipulation • <i data-lucide="bug"></i> Logical Flaws • <i data-lucide="lock"></i> Access Control</span>
-        </div>
-      </div>
-    </header>
-
-  <section id="about">
-    <div class="container">
-      <h2><i data-lucide="user"></i> Sobre mim</h2>
-      <p>Sou auditor de contratos inteligentes com foco na identificação de vulnerabilidades, falhas de lógica e riscos de segurança em smart contracts Solidity.
-
-        Realizo análises manuais de código, modelagem de ameaças e testes direcionados para identificar vetores de ataque como reentrancy, access control inadequado, denial of service e erros de lógica de negócio.
-        
-        Atualmente, meu foco principal como auditor é o estudo de vulnerabilidades recorrentes em protocolos DeFi, com ênfase em falhas de lógica, controle de acesso e vetores de exploração econômica.
-        
-        Minhas análises são documentadas em write-ups técnicos e proofs of concept publicados no GitHub.</p>
-    </div>
-  </section>
-
-  <section id="expertise">
-    <div class="container">
-      <h2><i data-lucide="star"></i> Especialidades</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">
-            <i data-lucide="trending-up"></i>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Fullstack & Bitcoin Developer</p>
+          <h1 class="hero__title">
+            Jorge Paim
+          </h1>
+          <p class="hero__description">
+            Desenvolvedor fullstack com foco em infraestrutura Bitcoin Core, APIs assíncronas com FastAPI, e aplicações modernas com React e TypeScript. Construo sistemas que comunicam com a blockchain em tempo real.
+          </p>
+          <div class="hero__actions">
+            <a href="#work" class="btn btn--primary">View Projects</a>
+            <a href="#contact" class="btn btn--ghost">Get in Touch</a>
           </div>
-          <h3>Price Manipulation</h3>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <i data-lucide="bug"></i>
+          <div class="hero__meta">
+            <span class="hero__meta-item">
+              <i data-lucide="bitcoin"></i>
+              Bitcoin Core RPC
+            </span>
+            <span class="hero__meta-item">
+              <i data-lucide="server"></i>
+              FastAPI / Python
+            </span>
+            <span class="hero__meta-item">
+              <i data-lucide="layout-grid"></i>
+              React / TypeScript
+            </span>
           </div>
-          <h3>Logical Flaws</h3>
         </div>
-        <div class="card">
-          <div class="card-icon">
-            <i data-lucide="lock"></i>
+        <div class="hero__visual">
+          <div class="hero__photo-wrapper">
+            <img src="foto.jpg" alt="Jorge Paim" class="hero__photo">
           </div>
-          <h3>Access Control</h3>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="writeups">
-    <div class="container">
-      <h2><i data-lucide="file-text"></i> Write-ups & Auditorias</h2>
-      <p>Análises técnicas documentadas no GitHub.</p>
-    </div>
-  </section>
-
-  </div>
-
-  <!-- Footer lateral à direita -->
-  <footer class="footer-sidebar">
-    <div class="footer-sidebar-content">
-      <div class="footer-info">
-        <p class="footer-name">Jorge Paim</p>
-        <p class="footer-copyright">© 2026</p>
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <i data-lucide="arrow-down"></i>
       </div>
-      <div class="footer-links">
-        <a href="https://github.com/MrAiKen007" class="footer-link" aria-label="GitHub">
-          <i data-lucide="github"></i>
-        </a>
-        <a href="mailto:jorgepam2005@gmail.com" class="footer-link" aria-label="Email">
-          <i data-lucide="mail"></i>
-        </a>
+    </section>
+
+    <!-- Expertise -->
+    <section class="section expertise" id="expertise">
+      <div class="section__inner">
+        <header class="section__header">
+          <p class="section__eyebrow">01 — Expertise</p>
+          <h2 class="section__title">What I Build</h2>
+          <p class="section__description">
+            Sistemas que conectam infraestrutura blockchain a aplicações modernas, com APIs robustas e interfaces responsivas.
+          </p>
+        </header>
+
+        <div class="expertise__list">
+          <article class="expertise__row">
+            <span class="expertise__row-number">01</span>
+            <div class="expertise__row-content">
+              <h3 class="expertise__row-title">Bitcoin Infrastructure</h3>
+              <p class="expertise__row-desc">
+                Integração com Bitcoin Core via RPC e ZeroMQ para monitorização de transações, gestão de wallets, e sincronização de blocos em tempo real.
+              </p>
+              <div class="expertise__row-code">
+                <code>bitcoind -rpcconnect -zmqpubrawblock</code>
+              </div>
+            </div>
+            <div class="expertise__row-visual">
+              <i data-lucide="bitcoin" class="expertise__row-icon"></i>
+            </div>
+          </article>
+
+          <article class="expertise__row">
+            <span class="expertise__row-number">02</span>
+            <div class="expertise__row-content">
+              <h3 class="expertise__row-title">Backend Systems</h3>
+              <p class="expertise__row-desc">
+                APIs assíncronas com FastAPI e Python, processamento de eventos em tempo real, e integração com sistemas de mensageria e bases de dados.
+              </p>
+              <div class="expertise__row-code">
+                <code>@router.post("/transactions") async def create()</code>
+              </div>
+            </div>
+            <div class="expertise__row-visual">
+              <i data-lucide="server" class="expertise__row-icon"></i>
+            </div>
+          </article>
+
+          <article class="expertise__row">
+            <span class="expertise__row-number">03</span>
+            <div class="expertise__row-content">
+              <h3 class="expertise__row-title">Frontend Applications</h3>
+              <p class="expertise__row-desc">
+                Dashboards e interfaces com React e TypeScript, visualização de dados em tempo real, e integração com APIs REST e WebSockets.
+              </p>
+              <div class="expertise__row-code">
+                <code>const [blocks, setBlocks] = useState&lt;Block[]&gt;([])</code>
+              </div>
+            </div>
+            <div class="expertise__row-visual">
+              <i data-lucide="layout-grid" class="expertise__row-icon"></i>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <!-- Stack -->
+    <section class="section stack" id="stack">
+      <div class="section__inner">
+        <header class="section__header">
+          <p class="section__eyebrow">02 — Stack</p>
+          <h2 class="section__title">Technical Arsenal</h2>
+          <p class="section__description">
+            Ferramentas e tecnologias usadas para construir sistemas completos, do node Bitcoin à interface do utilizador.
+          </p>
+        </header>
+
+        <div class="stack__grid">
+          <div class="stack__category">
+            <h3 class="stack__category-title">Bitcoin & Blockchain</h3>
+            <ul class="stack__list">
+              <li class="stack__item">
+                <span class="stack__item-name">Bitcoin Core</span>
+                <span class="stack__item-level">Expert</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">Bitcoin RPC</span>
+                <span class="stack__item-level">Expert</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">ZeroMQ</span>
+                <span class="stack__item-level">Advanced</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">Lightning Network</span>
+                <span class="stack__item-level">Intermediate</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="stack__category">
+            <h3 class="stack__category-title">Backend</h3>
+            <ul class="stack__list">
+              <li class="stack__item">
+                <span class="stack__item-name">Python</span>
+                <span class="stack__item-level">Expert</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">FastAPI</span>
+                <span class="stack__item-level">Expert</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">Asyncio</span>
+                <span class="stack__item-level">Advanced</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">PostgreSQL</span>
+                <span class="stack__item-level">Advanced</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="stack__category">
+            <h3 class="stack__category-title">Frontend</h3>
+            <ul class="stack__list">
+              <li class="stack__item">
+                <span class="stack__item-name">React</span>
+                <span class="stack__item-level">Expert</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">TypeScript</span>
+                <span class="stack__item-level">Expert</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">Next.js</span>
+                <span class="stack__item-level">Advanced</span>
+              </li>
+              <li class="stack__item">
+                <span class="stack__item-name">Tailwind CSS</span>
+                <span class="stack__item-level">Advanced</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section work" id="work">
+      <div class="section__inner">
+        <header class="section__header">
+          <p class="section__eyebrow">03 — Work</p>
+          <h2 class="section__title">Projects</h2>
+          <p class="section__description">
+            Sistemas construídos do início ao fim, com código aberto no GitHub.
+          </p>
+        </header>
+
+        <div class="work__list">
+          <article class="work__item">
+            <div class="work__item-content">
+              <h3 class="work__item-title">PENUMBRA</h3>
+              <p class="work__item-desc">
+                Carteira Bitcoin com privacy-by-design. Scoring de privacidade 0-100 por UTXO, coin control inteligente, graph builder interativo com D3.js, e alert engine em tempo real via WebSocket. Backend Python + frontend React/TypeScript.
+              </p>
+              <div class="work__item-tags">
+                <span class="work__tag">Python</span>
+                <span class="work__tag">React</span>
+                <span class="work__tag">TypeScript</span>
+                <span class="work__tag">Bitcoin Core</span>
+                <span class="work__tag">D3.js</span>
+              </div>
+            </div>
+            <a href="https://github.com/MrAiKen007/PENUMBRA" class="work__item-link" aria-label="View PENUMBRA on GitHub" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="work__item">
+            <div class="work__item-content">
+              <h3 class="work__item-title">corecraft</h3>
+              <p class="work__item-desc">
+                Dashboard de monitorização Bitcoin Core com integração RPC e ZeroMQ. Monitoramento em tempo real de mempool, fees dinâmicas, gestão multi-wallet, terminal de transações, e interpretação inteligente de estados (Broadcast, Mempool, Confirmed).
+              </p>
+              <div class="work__item-tags">
+                <span class="work__tag">Python</span>
+                <span class="work__tag">Bitcoin RPC</span>
+                <span class="work__tag">ZeroMQ</span>
+                <span class="work__tag">HTML/CSS</span>
+              </div>
+            </div>
+            <a href="https://github.com/MrAiKen007/corecraft" class="work__item-link" aria-label="View corecraft on GitHub" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="work__item">
+            <div class="work__item-content">
+              <h3 class="work__item-title">PoLT</h3>
+              <p class="work__item-desc">
+                Proof of Local Trust — protocolo experimental de consenso para transações offline via Bluetooth e redes mesh. Validação peer-to-peer baseada em reputação local, com sincronização posterior on-chain.
+              </p>
+              <div class="work__item-tags">
+                <span class="work__tag">HTML</span>
+                <span class="work__tag">JavaScript</span>
+                <span class="work__tag">Web3</span>
+                <span class="work__tag">P2P</span>
+              </div>
+            </div>
+            <a href="https://github.com/MrAiKen007/PoLT" class="work__item-link" aria-label="View PoLT on GitHub" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="work__item">
+            <div class="work__item-content">
+              <h3 class="work__item-title">ApiSkillWallet</h3>
+              <p class="work__item-desc">
+                API RESTful com Django e Django REST Framework para gestão de carteiras TON. Registro com seed phrase, autenticação JWT, envio de transações, webhooks de confirmação, e documentação Swagger. Deploy com Docker.
+              </p>
+              <div class="work__item-tags">
+                <span class="work__tag">Python</span>
+                <span class="work__tag">Django</span>
+                <span class="work__tag">DRF</span>
+                <span class="work__tag">Docker</span>
+                <span class="work__tag">TON</span>
+              </div>
+            </div>
+            <a href="https://github.com/MrAiKen007/ApiSkillWallet" class="work__item-link" aria-label="View ApiSkillWallet on GitHub" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="work__item">
+            <div class="work__item-content">
+              <h3 class="work__item-title">audit-system</h3>
+              <p class="work__item-desc">
+                Sistema multi-agente de auditoria de smart contracts com 8 agentes especializados, knowledge base Obsidian Vault, e suporte para qualquer modelo de IA (Claude, GPT, Gemini, Kimi). Framework de 6 fases para descoberta de vulnerabilidades.
+              </p>
+              <div class="work__item-tags">
+                <span class="work__tag">JavaScript</span>
+                <span class="work__tag">Solidity</span>
+                <span class="work__tag">AI Agents</span>
+                <span class="work__tag">Security</span>
+              </div>
+            </div>
+            <a href="https://github.com/MrAiKen007/audit-system" class="work__item-link" aria-label="View audit-system on GitHub" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="section__inner">
+        <header class="section__header">
+          <p class="section__eyebrow">04 — Contact</p>
+          <h2 class="section__title">Let's Build Together</h2>
+          <p class="section__description">
+            Disponível para projetos de infraestrutura Bitcoin, desenvolvimento fullstack, e colaborações técnicas.
+          </p>
+        </header>
+
+        <div class="contact__content">
+          <a href="mailto:jorgepam2005@gmail.com" class="contact__email">
+            <i data-lucide="mail"></i>
+            <span>jorgepam2005@gmail.com</span>
+          </a>
+          <div class="contact__links">
+            <a href="https://github.com/MrAiKen007" class="contact__link" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__copy">© 2026 Jorge Paim</p>
+      <p class="footer__note">Built with precision.</p>
     </div>
   </footer>
 
   <script>
     lucide.createIcons();
     
-    // Menu mobile toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const menuIcon = mobileMenuToggle.querySelector('i[data-lucide]');
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.querySelector('.nav-links');
     
-    if (mobileMenuToggle && navMenu) {
-      mobileMenuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('menu-open');
-        const isOpen = navMenu.classList.contains('menu-open');
+    if (mobileToggle && navLinks) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('nav-links--open');
+        mobileToggle.setAttribute('aria-expanded', isOpen);
         
+        const icon = mobileToggle.querySelector('i');
         if (isOpen) {
-          menuIcon.setAttribute('data-lucide', 'x');
+          icon.setAttribute('data-lucide', 'x');
         } else {
-          menuIcon.setAttribute('data-lucide', 'menu');
+          icon.setAttribute('data-lucide', 'menu');
         }
         lucide.createIcons();
       });
       
-      // Fechar menu ao clicar em um link
-      const navLinks = navMenu.querySelectorAll('.toggle-buttons__button');
-      navLinks.forEach(link => {
+      // Close menu on link click
+      navLinks.querySelectorAll('.nav-links__link').forEach(link => {
         link.addEventListener('click', () => {
-          navMenu.classList.remove('menu-open');
-          menuIcon.setAttribute('data-lucide', 'menu');
+          navLinks.classList.remove('nav-links--open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          const icon = mobileToggle.querySelector('i');
+          icon.setAttribute('data-lucide', 'menu');
           lucide.createIcons();
         });
       });
-      
-      // Fechar menu ao clicar fora
-      document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-          navMenu.classList.remove('menu-open');
-          menuIcon.setAttribute('data-lucide', 'menu');
-          lucide.createIcons();
+    }
+
+    // Scroll-triggered animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -10% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
         }
       });
-    }
-  </script>
-  <script src="js/menu.js"></script>
-  <script src="js/Liquid_Gradient.js"></script>
-  <script>
-    setTimeout(() => {
-      if (typeof app !== 'undefined' && app.gradientBackground) {
+    }, observerOptions);
 
-        const hero = document.querySelector('.hero');
-        const webGLApp = document.getElementById('webGLApp');
-        if (hero && webGLApp) {
-          hero.appendChild(webGLApp);
-          
-          const updateHeroSize = () => {
-            const heroRect = hero.getBoundingClientRect();
-            app.renderer.setSize(heroRect.width, heroRect.height);
-            app.camera.aspect = heroRect.width / heroRect.height;
-            app.camera.updateProjectionMatrix();
-            if (app.gradientBackground) {
-              app.gradientBackground.onResize(heroRect.width, heroRect.height);
-            }
-          };
-          
-          updateHeroSize();
-          window.addEventListener('resize', updateHeroSize);
-        }
-        
-        const uniforms = app.gradientBackground.uniforms;
-        uniforms.uColor1.value.set(1.0, 1.0, 1.0);
-        uniforms.uColor2.value.set(0.0, 0.0, 0.0);
-        uniforms.uColor3.value.set(1.0, 1.0, 1.0);
-        uniforms.uColor4.value.set(0.0, 0.0, 0.0);
-        uniforms.uColor5.value.set(1.0, 1.0, 1.0);
-        uniforms.uColor6.value.set(0.0, 0.0, 0.0);
-        uniforms.uDarkNavy.value.set(0.0, 0.0, 0.0);
-        app.scene.background = new THREE.Color(0x000000);
-      }
-    }, 100);
+    document.querySelectorAll('.section__header, .expertise__row, .stack__category, .work__item').forEach(el => {
+      el.classList.add('animate-on-scroll');
+      observer.observe(el);
+    });
   </script>
 </body>
 </html>
